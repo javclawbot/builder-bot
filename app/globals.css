@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --btc-orange: #F7931A;
+  --btc-orange-dark: #E07B0A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #030712;
+}
+
+@layer utilities {
+  .btc-glow {
+    box-shadow: 0 0 30px rgba(247, 147, 26, 0.15), 0 0 60px rgba(247, 147, 26, 0.08);
+  }
+
+  .btc-text-glow {
+    text-shadow: 0 0 20px rgba(247, 147, 26, 0.5);
+  }
+
+  .card-dark {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border: 1px solid rgba(247, 147, 26, 0.15);
+  }
+
+  .price-gradient {
+    background: linear-gradient(135deg, #F7931A, #FFB347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.spinning-coin {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(247, 147, 26, 0.4); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(247, 147, 26, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(247, 147, 26, 0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
